@@ -52,7 +52,6 @@ extension CustomCollectionsViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc: CollectionDetailsViewController = CollectionDetailsViewController()
-        print(custom_collections.count)
         vc.collection = custom_collections[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }

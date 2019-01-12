@@ -9,13 +9,10 @@
 import UIKit
 
 class CustomCollectionCell: UITableViewCell {
-    var collectionIdLabel = UILabel()
-    var collectionNameLabel = UILabel()
     
     // MARK: - Methods
     func configureWith(_ customCollection: CustomCollection) {
-        collectionIdLabel.text = String(customCollection.id)
-        collectionNameLabel.text = customCollection.title
+        titleLabel.text = customCollection.title
         if let url = URL(string: customCollection.image.src) {
             downloadImage(from: url)
         }
@@ -27,9 +24,19 @@ class CustomCollectionCell: UITableViewCell {
         collectionView.layer.cornerRadius = 30
         collectionView.layer.masksToBounds = true
         collectionView.contentMode = .scaleAspectFill
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .white
         
         return collectionView
+    }()
+    
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.semibold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.sizeToFit()
+        
+        return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -38,12 +45,17 @@ class CustomCollectionCell: UITableViewCell {
         contentView.backgroundColor = .clear
         
         contentView.addSubview(collectionImageView)
+        contentView.addSubview(titleLabel)
         
         collectionImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 26).isActive = true
-        //collectionImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         collectionImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         collectionImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
         collectionImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 26).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: collectionImageView.rightAnchor, constant: 10).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        titleLabel.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
     }
     
@@ -56,11 +68,8 @@ class CustomCollectionCell: UITableViewCell {
 extension CustomCollectionCell {
     
     func downloadImage(from url: URL) {
-        print("Download Started")
         Helper.getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
             DispatchQueue.main.async() {
                 self.collectionImageView.image = UIImage(data: data)
             }
