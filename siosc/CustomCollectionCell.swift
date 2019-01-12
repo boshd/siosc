@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CollectionCell: UITableViewCell {
+class CustomCollectionCell: UITableViewCell {
     var collectionId = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .default, reuseIdentifier: "collectionCell")
+        super.init(style: .default, reuseIdentifier: "customCollectionCell")
         
         collectionId = UILabel(frame: CGRect(x: 0, y: 0, width: 250.0,height: 40))
         contentView.backgroundColor = UIColor.blue

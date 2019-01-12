@@ -6,11 +6,11 @@
 //  Copyright © 2019 Kareem Arab. All rights reserved.
 //
 
-struct CustomCollections: Codable {
-    let custom_collections : [Collection]
+struct RootCustomCollections: Codable {
+    let custom_collections: [CustomCollection]
 }
 
-struct Collection: Codable {
+struct CustomCollection: Codable {
     var id: Int
     var handle: String
     var title: String

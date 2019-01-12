@@ -9,11 +9,11 @@
 import UIKit
 import SwiftyJSON
 
-class CollectionsDataSource: NSObject {
+class CustomCollectionsDataSource: NSObject {
     
     // MARK: - Properties
     var tableView: UITableView
-    var collections = [Collection]()
+    var custom_collections = [CustomCollection]()
     
     // MARK: - Initializer
     init(tableView: UITableView) {
@@ -22,29 +22,30 @@ class CollectionsDataSource: NSObject {
     
     // MARK: - Method(s)
     /// Grabs nicely packaged data from the ShopifyService and feeds it into the table
-    func doStuff(_ url: String) {
-        ShopifyService.getAPIResponse(url) { (collectionz) in
-            self.collections = collectionz
+    func doStuff(_ url: String, completion: @escaping ([CustomCollection])  -> Void) {
+        APIService.getAPICustomCollectionsResponse(url) { (customCollections) in
+            self.custom_collections = customCollections
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+            completion(self.custom_collections)
         }
     }
     
 }
 
-extension CollectionsDataSource: UITableViewDataSource {
+extension CustomCollectionsDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "collectionCell", for: indexPath) as? CollectionCell ?? CollectionCell()
-        let text = "Collection: \(self.collections[indexPath.row].title)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCollectionCell", for: indexPath) as? CustomCollectionCell ?? CustomCollectionCell()
+        let text = "\(self.custom_collections[indexPath.row].title)"
         cell.collectionId.text = text
         return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.collections.count > 0 {
-            return self.collections.count
+        if self.custom_collections.count > 0 {
+            return self.custom_collections.count
         }
         return 0
     }
