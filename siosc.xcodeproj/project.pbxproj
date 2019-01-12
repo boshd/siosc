@@ -18,10 +18,12 @@
 		BC5AF40F21E3F2800038D5F7 /* sioscUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5AF40E21E3F2800038D5F7 /* sioscUITests.swift */; };
 		BC5AF42521E427570038D5F7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5AF42421E427570038D5F7 /* APIService.swift */; };
 		BC5AF42721E427630038D5F7 /* CustomCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5AF42621E427630038D5F7 /* CustomCollection.swift */; };
-		BC7B67FD21E9A31000A8661C /* CollectionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B67FC21E9A31000A8661C /* CollectionDetailsViewController.swift */; };
+		BC7B67FD21E9A31000A8661C /* CollectionDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B67FC21E9A31000A8661C /* CollectionDetailsTableViewController.swift */; };
 		BC7B67FF21E9A6F900A8661C /* CollectionDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B67FE21E9A6F900A8661C /* CollectionDetailsDataSource.swift */; };
 		BC7B680121E9AF2000A8661C /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B680021E9AF2000A8661C /* ProductCell.swift */; };
-		BCBCDA0D21E81AF800A5B4AD /* CustomCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBCDA0C21E81AF800A5B4AD /* CustomCollectionsViewController.swift */; };
+		BC7B680921EA34FE00A8661C /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B680821EA34FE00A8661C /* Image.swift */; };
+		BC7B680B21EA43D200A8661C /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B680A21EA43D200A8661C /* Helper.swift */; };
+		BCBCDA0D21E81AF800A5B4AD /* CustomCollectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBCDA0C21E81AF800A5B4AD /* CustomCollectionsTableViewController.swift */; };
 		BCBCDA0F21E8DA4000A5B4AD /* CustomCollectionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBCDA0E21E8DA4000A5B4AD /* CustomCollectionsDataSource.swift */; };
 		BCBCDA1121E8DB1500A5B4AD /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBCDA1021E8DB1500A5B4AD /* CustomCollectionCell.swift */; };
 		BCBCDA1321E98F8700A5B4AD /* Collect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBCDA1221E98F8700A5B4AD /* Collect.swift */; };
@@ -66,10 +68,12 @@
 		BC5AF41021E3F2800038D5F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC5AF42421E427570038D5F7 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		BC5AF42621E427630038D5F7 /* CustomCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollection.swift; sourceTree = "<group>"; };
-		BC7B67FC21E9A31000A8661C /* CollectionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsViewController.swift; sourceTree = "<group>"; };
+		BC7B67FC21E9A31000A8661C /* CollectionDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsTableViewController.swift; sourceTree = "<group>"; };
 		BC7B67FE21E9A6F900A8661C /* CollectionDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsDataSource.swift; sourceTree = "<group>"; };
 		BC7B680021E9AF2000A8661C /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
-		BCBCDA0C21E81AF800A5B4AD /* CustomCollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionsViewController.swift; sourceTree = "<group>"; };
+		BC7B680821EA34FE00A8661C /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		BC7B680A21EA43D200A8661C /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		BCBCDA0C21E81AF800A5B4AD /* CustomCollectionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionsTableViewController.swift; sourceTree = "<group>"; };
 		BCBCDA0E21E8DA4000A5B4AD /* CustomCollectionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionsDataSource.swift; sourceTree = "<group>"; };
 		BCBCDA1021E8DB1500A5B4AD /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
 		BCBCDA1221E98F8700A5B4AD /* Collect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collect.swift; sourceTree = "<group>"; };
@@ -157,7 +161,8 @@
 			children = (
 				BC5AF3EB21E3F27E0038D5F7 /* AppDelegate.swift */,
 				BC5AF42421E427570038D5F7 /* APIService.swift */,
-				BC7B680221EA25EF00A8661C /* Objects */,
+				BC7B680A21EA43D200A8661C /* Helper.swift */,
+				BC7B680221EA25EF00A8661C /* Model */,
 				BC7B680321EA260800A8661C /* Cells */,
 				BC7B680421EA261200A8661C /* Datasources */,
 				BC7B680521EA261F00A8661C /* ViewControllers */,
@@ -187,14 +192,15 @@
 			path = sioscUITests;
 			sourceTree = "<group>";
 		};
-		BC7B680221EA25EF00A8661C /* Objects */ = {
+		BC7B680221EA25EF00A8661C /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				BC5AF42621E427630038D5F7 /* CustomCollection.swift */,
 				BCBCDA1221E98F8700A5B4AD /* Collect.swift */,
 				BCBCDA1421E98F8F00A5B4AD /* Product.swift */,
+				BC7B680821EA34FE00A8661C /* Image.swift */,
 			);
-			path = Objects;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BC7B680321EA260800A8661C /* Cells */ = {
@@ -218,8 +224,8 @@
 		BC7B680521EA261F00A8661C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BCBCDA0C21E81AF800A5B4AD /* CustomCollectionsViewController.swift */,
-				BC7B67FC21E9A31000A8661C /* CollectionDetailsViewController.swift */,
+				BCBCDA0C21E81AF800A5B4AD /* CustomCollectionsTableViewController.swift */,
+				BC7B67FC21E9A31000A8661C /* CollectionDetailsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -450,17 +456,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC5AF42721E427630038D5F7 /* CustomCollection.swift in Sources */,
+				BC7B680B21EA43D200A8661C /* Helper.swift in Sources */,
 				BC5AF3F421E3F27E0038D5F7 /* siosc.xcdatamodeld in Sources */,
 				BCBCDA1521E98F8F00A5B4AD /* Product.swift in Sources */,
 				BC5AF42521E427570038D5F7 /* APIService.swift in Sources */,
 				BC5AF3EC21E3F27E0038D5F7 /* AppDelegate.swift in Sources */,
 				BCBCDA1121E8DB1500A5B4AD /* CustomCollectionCell.swift in Sources */,
+				BC7B680921EA34FE00A8661C /* Image.swift in Sources */,
 				BC7B67FF21E9A6F900A8661C /* CollectionDetailsDataSource.swift in Sources */,
 				BCBCDA0F21E8DA4000A5B4AD /* CustomCollectionsDataSource.swift in Sources */,
 				BC7B680121E9AF2000A8661C /* ProductCell.swift in Sources */,
-				BC7B67FD21E9A31000A8661C /* CollectionDetailsViewController.swift in Sources */,
+				BC7B67FD21E9A31000A8661C /* CollectionDetailsTableViewController.swift in Sources */,
 				BCBCDA1321E98F8700A5B4AD /* Collect.swift in Sources */,
-				BCBCDA0D21E81AF800A5B4AD /* CustomCollectionsViewController.swift in Sources */,
+				BCBCDA0D21E81AF800A5B4AD /* CustomCollectionsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

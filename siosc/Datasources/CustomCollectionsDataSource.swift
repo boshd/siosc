@@ -38,8 +38,7 @@ extension CustomCollectionsDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCollectionCell", for: indexPath) as? CustomCollectionCell ?? CustomCollectionCell()
-        let text = "\(self.custom_collections[indexPath.row].title)"
-        cell.collectionId.text = text
+        cell.configureWith(custom_collections[indexPath.row])
         return cell
     }
 

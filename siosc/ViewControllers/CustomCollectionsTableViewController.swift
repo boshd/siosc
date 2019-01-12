@@ -19,6 +19,13 @@ class CustomCollectionsViewController: UITableViewController {
         setupTableView()
         setupFeedDataSource()
         load()
+        setupNavigationBar()
+    }
+
+    func setupNavigationBar() {
+        self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Custom Collections"
     }
     
     // Setup TableView
@@ -48,6 +55,10 @@ extension CustomCollectionsViewController {
         print(custom_collections.count)
         vc.collection = custom_collections[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
 }

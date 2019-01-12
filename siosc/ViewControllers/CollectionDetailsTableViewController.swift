@@ -19,6 +19,14 @@ class CollectionDetailsViewController: UITableViewController {
         setupTableView()
         setupFeedDataSource()
         load()
+        setupNavigationBar()
+    }
+    
+    // Setting up the navigation bar
+    func setupNavigationBar() {
+        self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Collection Details"
     }
     
     // Setup TableView
