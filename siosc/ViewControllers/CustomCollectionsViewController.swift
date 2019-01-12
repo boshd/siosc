@@ -47,7 +47,7 @@ extension CustomCollectionsViewController {
         let vc: CollectionDetailsViewController = CollectionDetailsViewController()
         print(custom_collections.count)
         vc.collection = custom_collections[indexPath.row]
-        present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

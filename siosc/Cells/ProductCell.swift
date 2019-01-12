@@ -1,5 +1,5 @@
 //
-//  CollectionDetailsCell.swift
+//  ProductCell.swift
 //  siosc
 //
 //  Created by Kareem Arab on 2019-01-12.

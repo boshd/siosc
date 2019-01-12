@@ -9,14 +9,20 @@
 import UIKit
 
 class CustomCollectionCell: UITableViewCell {
-    var collectionId = UILabel()
+    var collectionIdLabel = UILabel()
+    var collectionNameLabel = UILabel()
+    
+    // MARK: - Methods
+    func configureWith(_ customCollection: CustomCollection) {
+        collectionIdLabel.text = String(customCollection.id)
+        collectionNameLabel.text = customCollection.title
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: "customCollectionCell")
         
-        collectionId = UILabel(frame: CGRect(x: 0, y: 0, width: 250.0,height: 40))
-        contentView.backgroundColor = UIColor.blue
-        contentView.addSubview(collectionId)
+        collectionIdLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 250.0,height: 40))
+        contentView.addSubview(collectionIdLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {

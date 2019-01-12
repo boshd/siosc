@@ -13,6 +13,7 @@ class CollectionDetailsDataSource: NSObject {
     
     // MARK: - Properties
     var tableView: UITableView
+    var collection: CustomCollection!
     var collects = [Collect]()
     var products = [Product]()
     
@@ -28,6 +29,8 @@ class CollectionDetailsDataSource: NSObject {
             APIService.getAPIProductsResponse(collects, completion: { (products) in
                 // Do something with the products -- Holy shit so fucking elegant kareem. holy shit.
                 self.products = products
+                self.collects = collects
+                self.collection = collection
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -52,6 +55,11 @@ extension CollectionDetailsDataSource: UITableViewDataSource {
             return self.products.count
         }
         return 0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        //let text = self.collection.title
+        return "text"
     }
     
 }

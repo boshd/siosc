@@ -1,5 +1,5 @@
 //
-//  Collection.swift
+//  CustomCollection.swift
 //  siosc
 //
 //  Created by Kareem Arab on 2019-01-07.
