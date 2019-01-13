@@ -1,4 +1,4 @@
-# Shopify iOS Developer Challenge 🌴
+# Shopify iOS Developer Challenge
 
 _Shopify's 2k19 Summer iOS Developer Intern coding challenge._
 
