@@ -23,6 +23,11 @@
 		BC7B680121E9AF2000A8661C /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B680021E9AF2000A8661C /* ProductCell.swift */; };
 		BC7B680921EA34FE00A8661C /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B680821EA34FE00A8661C /* Image.swift */; };
 		BC7B680B21EA43D200A8661C /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B680A21EA43D200A8661C /* Helper.swift */; };
+		BC7B680D21EA527800A8661C /* CollectionDetailsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B680C21EA527800A8661C /* CollectionDetailsHeaderCell.swift */; };
+		BC7B680F21EA618100A8661C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B680E21EA618100A8661C /* Colors.swift */; };
+		BC7B681121EB9C4900A8661C /* CollectionDetailsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7B681021EB9C4900A8661C /* CollectionDetailsHeaderCell.xib */; };
+		BC7B681321EBAE4D00A8661C /* Variant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B681221EBAE4D00A8661C /* Variant.swift */; };
+		BC7B681521EBB41800A8661C /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7B681421EBB41800A8661C /* ProductCell.xib */; };
 		BCBCDA0D21E81AF800A5B4AD /* CustomCollectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBCDA0C21E81AF800A5B4AD /* CustomCollectionsTableViewController.swift */; };
 		BCBCDA0F21E8DA4000A5B4AD /* CustomCollectionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBCDA0E21E8DA4000A5B4AD /* CustomCollectionsDataSource.swift */; };
 		BCBCDA1121E8DB1500A5B4AD /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBCDA1021E8DB1500A5B4AD /* CustomCollectionCell.swift */; };
@@ -73,6 +78,11 @@
 		BC7B680021E9AF2000A8661C /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		BC7B680821EA34FE00A8661C /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		BC7B680A21EA43D200A8661C /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		BC7B680C21EA527800A8661C /* CollectionDetailsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsHeaderCell.swift; sourceTree = "<group>"; };
+		BC7B680E21EA618100A8661C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		BC7B681021EB9C4900A8661C /* CollectionDetailsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionDetailsHeaderCell.xib; sourceTree = "<group>"; };
+		BC7B681221EBAE4D00A8661C /* Variant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variant.swift; sourceTree = "<group>"; };
+		BC7B681421EBB41800A8661C /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		BCBCDA0C21E81AF800A5B4AD /* CustomCollectionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionsTableViewController.swift; sourceTree = "<group>"; };
 		BCBCDA0E21E8DA4000A5B4AD /* CustomCollectionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionsDataSource.swift; sourceTree = "<group>"; };
 		BCBCDA1021E8DB1500A5B4AD /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
@@ -161,11 +171,11 @@
 			children = (
 				BC5AF3EB21E3F27E0038D5F7 /* AppDelegate.swift */,
 				BC5AF42421E427570038D5F7 /* APIService.swift */,
-				BC7B680A21EA43D200A8661C /* Helper.swift */,
+				BC7B680521EA261F00A8661C /* ViewControllers */,
+				BC7B680421EA261200A8661C /* Datasources */,
 				BC7B680221EA25EF00A8661C /* Model */,
 				BC7B680321EA260800A8661C /* Cells */,
-				BC7B680421EA261200A8661C /* Datasources */,
-				BC7B680521EA261F00A8661C /* ViewControllers */,
+				BC7B681621EBD08600A8661C /* Utilities */,
 				BC5AF3F521E3F2800038D5F7 /* Assets.xcassets */,
 				BC5AF3F721E3F2800038D5F7 /* LaunchScreen.storyboard */,
 				BC5AF3FA21E3F2800038D5F7 /* Info.plist */,
@@ -199,6 +209,7 @@
 				BCBCDA1221E98F8700A5B4AD /* Collect.swift */,
 				BCBCDA1421E98F8F00A5B4AD /* Product.swift */,
 				BC7B680821EA34FE00A8661C /* Image.swift */,
+				BC7B681221EBAE4D00A8661C /* Variant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +219,9 @@
 			children = (
 				BCBCDA1021E8DB1500A5B4AD /* CustomCollectionCell.swift */,
 				BC7B680021E9AF2000A8661C /* ProductCell.swift */,
+				BC7B681421EBB41800A8661C /* ProductCell.xib */,
+				BC7B680C21EA527800A8661C /* CollectionDetailsHeaderCell.swift */,
+				BC7B681021EB9C4900A8661C /* CollectionDetailsHeaderCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -230,6 +244,15 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		BC7B681621EBD08600A8661C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BC7B680A21EA43D200A8661C /* Helper.swift */,
+				BC7B680E21EA618100A8661C /* Colors.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,7 +264,6 @@
 				BC5AF3E421E3F27E0038D5F7 /* Sources */,
 				BC5AF3E521E3F27E0038D5F7 /* Frameworks */,
 				BC5AF3E621E3F27E0038D5F7 /* Resources */,
-				3F39247110F65FB884038BCA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,7 +361,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC5AF3F921E3F2800038D5F7 /* LaunchScreen.storyboard in Resources */,
+				BC7B681521EBB41800A8661C /* ProductCell.xib in Resources */,
 				BC5AF3F621E3F2800038D5F7 /* Assets.xcassets in Resources */,
+				BC7B681121EB9C4900A8661C /* CollectionDetailsHeaderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,28 +404,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3F39247110F65FB884038BCA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-siosc/Pods-siosc-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-siosc/Pods-siosc-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		834A2583B06A9863B331660B /* [CP] Check Pods Manifest.lock */ = {
@@ -455,14 +457,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC7B681321EBAE4D00A8661C /* Variant.swift in Sources */,
 				BC5AF42721E427630038D5F7 /* CustomCollection.swift in Sources */,
 				BC7B680B21EA43D200A8661C /* Helper.swift in Sources */,
 				BC5AF3F421E3F27E0038D5F7 /* siosc.xcdatamodeld in Sources */,
 				BCBCDA1521E98F8F00A5B4AD /* Product.swift in Sources */,
 				BC5AF42521E427570038D5F7 /* APIService.swift in Sources */,
 				BC5AF3EC21E3F27E0038D5F7 /* AppDelegate.swift in Sources */,
+				BC7B680D21EA527800A8661C /* CollectionDetailsHeaderCell.swift in Sources */,
 				BCBCDA1121E8DB1500A5B4AD /* CustomCollectionCell.swift in Sources */,
 				BC7B680921EA34FE00A8661C /* Image.swift in Sources */,
+				BC7B680F21EA618100A8661C /* Colors.swift in Sources */,
 				BC7B67FF21E9A6F900A8661C /* CollectionDetailsDataSource.swift in Sources */,
 				BCBCDA0F21E8DA4000A5B4AD /* CustomCollectionsDataSource.swift in Sources */,
 				BC7B680121E9AF2000A8661C /* ProductCell.swift in Sources */,
@@ -639,6 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZXW89PWCPT;
 				INFOPLIST_FILE = siosc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -658,6 +664,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZXW89PWCPT;
 				INFOPLIST_FILE = siosc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

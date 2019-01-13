@@ -16,32 +16,40 @@ class CustomCollectionsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        setupRegistrations()
         setupFeedDataSource()
         load()
         setupNavigationBar()
+        design()
     }
 
-    func setupNavigationBar() {
+    // Navigation bar
+    fileprivate func setupNavigationBar() {
         self.navigationItem.largeTitleDisplayMode = .always
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "Custom Collections"
     }
     
-    // Setup TableView
-    func setupTableView() {
+    // Cell design
+    fileprivate func design() {
+        tableView.backgroundColor = UIColor.offWhite()
+        tableView.separatorStyle = .none
+    }
+    
+    // Setup setup cell registration
+    fileprivate func setupRegistrations() {
         self.tableView.register(CustomCollectionCell.self, forCellReuseIdentifier: "customCollectionCell")
     }
     
     // Sets up the ProvinceDataSource
-    func setupFeedDataSource() {
+    fileprivate func setupFeedDataSource() {
         collectionsDataSource = CustomCollectionsDataSource(tableView: tableView)
         tableView.dataSource = collectionsDataSource
     }
     
     // Loads data from DataSource
-    func load() {
-        collectionsDataSource?.doStuff(url, completion: { (customCollections) in
+    fileprivate func load() {
+        collectionsDataSource?.populateUsing(url, completion: { (customCollections) in
             self.custom_collections = customCollections
         })
     }
@@ -51,9 +59,9 @@ class CustomCollectionsViewController: UITableViewController {
 extension CustomCollectionsViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc: CollectionDetailsViewController = CollectionDetailsViewController()
-        vc.collection = custom_collections[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
+        let collectionDetailsVC: CollectionDetailsViewController = CollectionDetailsViewController()
+        collectionDetailsVC.collection = custom_collections[indexPath.row]
+        navigationController?.pushViewController(collectionDetailsVC, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

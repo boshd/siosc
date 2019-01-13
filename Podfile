@@ -6,7 +6,6 @@ target 'siosc' do
   use_frameworks!
   
   # Pods for siosc
-  pod 'SwiftyJSON'
   
   target 'sioscTests' do
     inherit! :search_paths

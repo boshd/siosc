@@ -15,36 +15,66 @@ class CollectionDetailsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black
-        setupTableView()
+        setupRegistrations()
         setupFeedDataSource()
         load()
         setupNavigationBar()
+        design()
+        tableView.allowsSelection = false
+    }
+    
+    // Cell design
+    fileprivate func design() {
+        tableView.backgroundColor = UIColor.offWhite()
+        tableView.separatorStyle = .none
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
     }
     
     // Setting up the navigation bar
-    func setupNavigationBar() {
+    fileprivate func setupNavigationBar() {
         self.navigationItem.largeTitleDisplayMode = .always
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "Collection Details"
     }
     
     // Setup TableView
-    func setupTableView() {
-        self.tableView.register(ProductCell.self, forCellReuseIdentifier: "productCell")
+    fileprivate func setupRegistrations() {
+        self.tableView.register(UINib(nibName: "CollectionDetailsHeaderCell", bundle:nil),
+                           forCellReuseIdentifier: "CollectionDetailsHeaderCell")
+        self.tableView.register(UINib(nibName: "ProductCell", bundle:nil),
+                                forCellReuseIdentifier: "ProductCell")
     }
     
     // Sets up the ProvinceDataSource
-    func setupFeedDataSource() {
+    fileprivate func setupFeedDataSource() {
         collectionDetailsDataSource = CollectionDetailsDataSource(tableView: tableView)
         tableView.dataSource = collectionDetailsDataSource
     }
     
     // Loads data from DataSource
-    func load() {
-        collectionDetailsDataSource?.doStuff(self.collection, completion: { (products) in
+    fileprivate func load() {
+        collectionDetailsDataSource?.populateUsing(self.collection, completion: { (products) in
             // do something with the products -- if you want
         })
+    }
+    
+}
+
+extension CollectionDetailsViewController {
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionDetailsHeaderCell") as! CollectionDetailsHeaderCell
+        cell.configureWith(collection)
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
 }

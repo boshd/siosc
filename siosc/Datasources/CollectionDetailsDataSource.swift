@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 
 class CollectionDetailsDataSource: NSObject {
     
@@ -23,11 +22,9 @@ class CollectionDetailsDataSource: NSObject {
     }
     
     // MARK: - Method(s)
-    /// Grabs nicely packaged data from the ShopifyService and feeds it into the table
-    func doStuff(_ collection: CustomCollection, completion: @escaping ([Product])  -> Void) {
+    func populateUsing(_ collection: CustomCollection, completion: @escaping ([Product])  -> Void) {
         APIService.getAPICollectsResponse(collection) { (collects) in
             APIService.getAPIProductsResponse(collects, completion: { (products) in
-                // Do something with the products -- Holy shit so fucking elegant kareem. holy shit.
                 self.products = products
                 self.collects = collects
                 self.collection = collection
@@ -44,9 +41,8 @@ class CollectionDetailsDataSource: NSObject {
 extension CollectionDetailsDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as? ProductCell ?? ProductCell()
-        let text = "\(self.products[indexPath.row].title)"
-        cell.title.text = text
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as? ProductCell ?? ProductCell()
+        cell.configureWith(products[indexPath.row], collection: collection)
         return cell
     }
     
@@ -55,11 +51,6 @@ extension CollectionDetailsDataSource: UITableViewDataSource {
             return self.products.count
         }
         return 0
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        //let text = self.collection.title
-        return "text"
     }
     
 }

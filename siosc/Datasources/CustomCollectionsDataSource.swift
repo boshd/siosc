@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 
 class CustomCollectionsDataSource: NSObject {
     
@@ -21,8 +20,7 @@ class CustomCollectionsDataSource: NSObject {
     }
     
     // MARK: - Method(s)
-    /// Grabs nicely packaged data from the ShopifyService and feeds it into the table
-    func doStuff(_ url: String, completion: @escaping ([CustomCollection])  -> Void) {
+    func populateUsing(_ url: String, completion: @escaping ([CustomCollection])  -> Void) {
         APIService.getAPICustomCollectionsResponse(url) { (customCollections) in
             self.custom_collections = customCollections
             DispatchQueue.main.async {

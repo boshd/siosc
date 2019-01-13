@@ -6,7 +6,7 @@
 //  Copyright © 2019 Kareem Arab. All rights reserved.
 //
 
-import SwiftyJSON
+import Foundation
 
 typealias GETAPICustomCollectionsResponseCompletion = ([CustomCollection]) -> Void
 typealias GETAPICollectsResponseCompletion = ([Collect])  -> Void
@@ -15,7 +15,8 @@ typealias GETAPIProductsResponseCompletion = ([Product])  -> Void
 struct APIService {
     
     static func getAPICustomCollectionsResponse(_ url: String, completion: @escaping GETAPICustomCollectionsResponseCompletion) {
-        let task = URLSession.shared.dataTask(with: URL(string: url)!) {
+        guard let url = URL(string: url) else { return }
+        let task = URLSession.shared.dataTask(with: url) {
             data, response, error in
             guard let data = data else { return }
             do {
@@ -30,8 +31,8 @@ struct APIService {
     
     static func getAPICollectsResponse(_ collection: CustomCollection, completion: @escaping GETAPICollectsResponseCompletion) {
         let collection_id = collection.id
-        let url = "https://shopicruit.myshopify.com/admin/collects.json?collection_id=\(collection_id)&page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6"
-        let task = URLSession.shared.dataTask(with: URL(string: url)!) {
+        guard let url = URL(string: "https://shopicruit.myshopify.com/admin/collects.json?collection_id=\(collection_id)&page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6") else { return }
+        let task = URLSession.shared.dataTask(with: url) {
             data, response, error in
             guard let data = data else { return }
             do {
@@ -49,9 +50,8 @@ struct APIService {
         for collect in collects {
             text += "\(collect.product_id),"
         }
-
-        let url = "https://shopicruit.myshopify.com/admin/products.json?ids=\(text)&page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6"
-        let task = URLSession.shared.dataTask(with: URL(string: url)!) {
+        guard let url = URL(string: "https://shopicruit.myshopify.com/admin/products.json?ids=\(text)&page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6") else { return }
+        let task = URLSession.shared.dataTask(with: url) {
             data, response, error in
             guard let data = data else { return }
             do {
@@ -63,7 +63,5 @@ struct APIService {
         }
         task.resume()
     }
-    
-    
     
 }
