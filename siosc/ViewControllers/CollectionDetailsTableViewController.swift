@@ -25,7 +25,7 @@ class CollectionDetailsViewController: UITableViewController {
     
     // Cell design
     fileprivate func design() {
-        tableView.backgroundColor = UIColor.offWhite()
+        tableView.backgroundColor = UIColor.offBlack()
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
@@ -33,6 +33,10 @@ class CollectionDetailsViewController: UITableViewController {
     
     // Setting up the navigation bar
     fileprivate func setupNavigationBar() {
+        self.navigationController?.navigationBar.barTintColor = UIColor.offBlack()
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationItem.largeTitleDisplayMode = .always
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "Collection Details"
@@ -57,6 +61,10 @@ class CollectionDetailsViewController: UITableViewController {
         collectionDetailsDataSource?.populateUsing(self.collection, completion: { (products) in
             // do something with the products -- if you want
         })
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 }

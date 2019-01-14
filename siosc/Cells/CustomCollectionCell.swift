@@ -49,7 +49,7 @@ class CustomCollectionCell: UITableViewCell {
         contentView.backgroundColor = .white
         selectionStyle = UITableViewCell.SelectionStyle.none
         contentView.layer.cornerRadius = 8
-        backgroundColor = UIColor.offWhite()
+        backgroundColor = UIColor.offBlack()
         contentView.addSubview(collectionImageView)
         contentView.addSubview(titleLabel)
         

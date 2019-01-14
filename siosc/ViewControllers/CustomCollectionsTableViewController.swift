@@ -26,13 +26,17 @@ class CustomCollectionsViewController: UITableViewController {
     // Navigation bar
     fileprivate func setupNavigationBar() {
         self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.barTintColor = UIColor.offBlack()
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.title = "Custom Collections"
     }
     
     // Cell design
     fileprivate func design() {
-        tableView.backgroundColor = UIColor.offWhite()
+        tableView.backgroundColor = UIColor.offBlack()
         tableView.separatorStyle = .none
     }
     
@@ -52,6 +56,10 @@ class CustomCollectionsViewController: UITableViewController {
         collectionsDataSource?.populateUsing(url, completion: { (customCollections) in
             self.custom_collections = customCollections
         })
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 }

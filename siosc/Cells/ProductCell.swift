@@ -22,7 +22,7 @@ class ProductCell: UITableViewCell {
         contentView.backgroundColor = .white
         mainView.layer.cornerRadius = 8
         productImageView.layer.cornerRadius = 25
-        backgroundColor = UIColor.offWhite()
+        backgroundColor = UIColor.offBlack()
     }
     
     func configureWith(_ product: Product, collection: CustomCollection) {
